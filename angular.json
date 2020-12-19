@@ -9,12 +9,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -39,12 +43,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -60,7 +68,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/api-interfaces/**/*.ts"
+            ]
           }
         }
       }
@@ -72,7 +82,7 @@
       "prefix": "panng-stream",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist/apps/panng-demo",
             "index": "apps/panng-demo/src/index.html",
@@ -84,8 +94,13 @@
               "apps/panng-demo/src/favicon.ico",
               "apps/panng-demo/src/assets"
             ],
-            "styles": ["apps/panng-demo/src/styles.scss"],
-            "scripts": []
+            "styles": [
+              "apps/panng-demo/src/styles.scss"
+            ],
+            "scripts": [],
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            }
           },
           "configurations": {
             "production": {
@@ -118,7 +133,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "panng-demo:build"
           },
@@ -145,7 +160,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/panng-demo"],
+          "outputs": [
+            "coverage/apps/panng-demo"
+          ],
           "options": {
             "jestConfig": "apps/panng-demo/jest.config.js",
             "passWithNoTests": true
@@ -174,14 +191,17 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/panng-demo-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/panng-demo-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "schematics": {
     "@nrwl/angular": {
@@ -208,5 +228,6 @@
     "@nrwl/angular:component": {
       "style": "scss"
     }
-  }
+  },
+  "defaultProject": "panng-demo"
 }
