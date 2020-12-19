@@ -1,7 +1,7 @@
 {
   "npmScope": "panng-stream",
   "affected": {
-    "defaultBase": "master"
+    "defaultBase": "main"
   },
   "implicitDependencies": {
     "angular.json": "*",
@@ -23,18 +23,18 @@
     }
   },
   "projects": {
+    "api": {
+      "tags": []
+    },
+    "api-interfaces": {
+      "tags": []
+    },
     "panng-demo": {
       "tags": []
     },
     "panng-demo-e2e": {
       "tags": [],
       "implicitDependencies": ["panng-demo"]
-    },
-    "api": {
-      "tags": []
-    },
-    "api-interfaces": {
-      "tags": []
     }
   }
 }
