@@ -18,7 +18,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -26,15 +31,14 @@
     "api": {
       "tags": []
     },
-    "api-interfaces": {
-      "tags": []
-    },
     "panng-demo": {
       "tags": []
     },
     "panng-demo-e2e": {
       "tags": [],
-      "implicitDependencies": ["panng-demo"]
+      "implicitDependencies": [
+        "panng-demo"
+      ]
     }
   }
 }
