@@ -60,39 +60,66 @@
         }
       }
     },
-    "panng-demo": {
+    "shared-utilities-rx": {
+      "root": "libs/shared/utilities/rx",
+      "sourceRoot": "libs/shared/utilities/rx/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/utilities/rx/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "shared-utilities-types": {
+      "root": "libs/shared/utilities/types",
+      "sourceRoot": "libs/shared/utilities/types/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/utilities/types/**/*.ts"
+            ]
+          }
+        }
+      }
+    },
+    "demo": {
       "projectType": "application",
-      "root": "apps/panng-demo",
-      "sourceRoot": "apps/panng-demo/src",
+      "root": "apps/demo",
+      "sourceRoot": "apps/demo/src",
       "prefix": "panng-stream",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apps/panng-demo",
-            "index": "apps/panng-demo/src/index.html",
-            "main": "apps/panng-demo/src/main.ts",
-            "polyfills": "apps/panng-demo/src/polyfills.ts",
-            "tsConfig": "apps/panng-demo/tsconfig.app.json",
+            "outputPath": "dist/apps/demo",
+            "index": "apps/demo/src/index.html",
+            "main": "apps/demo/src/main.ts",
+            "polyfills": "apps/demo/src/polyfills.ts",
+            "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/panng-demo/src/favicon.ico",
-              "apps/panng-demo/src/assets"
+              "apps/demo/src/favicon.ico",
+              "apps/demo/src/assets"
             ],
             "styles": [
-              "apps/panng-demo/src/styles.scss"
+              "apps/demo/src/styles.scss"
             ],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "webpack.config.js"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/panng-demo/src/environments/environment.ts",
-                  "with": "apps/panng-demo/src/environments/environment.prod.ts"
+                  "replace": "apps/demo/src/environments/environment.ts",
+                  "with": "apps/demo/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -118,58 +145,58 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "panng-demo:build"
+            "browserTarget": "demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "panng-demo:build:production"
+              "browserTarget": "demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "panng-demo:build"
+            "browserTarget": "demo:build"
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/panng-demo/src/**/*.ts",
-              "apps/panng-demo/src/**/*.html"
+              "apps/demo/src/**/*.ts",
+              "apps/demo/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "outputs": [
-            "coverage/apps/panng-demo"
+            "coverage/apps/demo"
           ],
           "options": {
-            "jestConfig": "apps/panng-demo/jest.config.js",
+            "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "panng-demo-e2e": {
-      "root": "apps/panng-demo-e2e",
-      "sourceRoot": "apps/panng-demo-e2e/src",
+    "demo-e2e": {
+      "root": "apps/demo-e2e",
+      "sourceRoot": "apps/demo-e2e/src",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@nrwl/cypress:cypress",
           "options": {
-            "cypressConfig": "apps/panng-demo-e2e/cypress.json",
-            "tsConfig": "apps/panng-demo-e2e/tsconfig.e2e.json",
-            "devServerTarget": "panng-demo:serve"
+            "cypressConfig": "apps/demo-e2e/cypress.json",
+            "tsConfig": "apps/demo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "panng-demo:serve:production"
+              "devServerTarget": "demo:serve:production"
             }
           }
         },
@@ -177,7 +204,7 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "apps/panng-demo-e2e/**/*.{js,ts}"
+              "apps/demo-e2e/**/*.{js,ts}"
             ]
           }
         }
@@ -214,5 +241,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "panng-demo"
+  "defaultProject": "demo"
 }
