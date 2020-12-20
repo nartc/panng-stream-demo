@@ -38,6 +38,15 @@
     "demo-e2e": {
       "tags": [],
       "implicitDependencies": ["demo"]
+    },
+    "demo-shell": {
+      "tags": ["scope:demo", "type:library"]
+    },
+    "demo-feature-auth": {
+      "tags": ["scope:demo", "type:library"]
+    },
+    "demo-feature-post": {
+      "tags": ["scope:demo", "type:library"]
     }
   }
 }

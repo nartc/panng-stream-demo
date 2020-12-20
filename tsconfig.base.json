@@ -20,7 +20,12 @@
       ],
       "@panng-stream/shared/utilities/types": [
         "libs/shared/utilities/types/src/index.ts"
-      ]
+      ],
+      "@panng-stream/demo/shell": ["libs/demo/shell/src/index.ts"],
+      "@panng-stream/demo/feature-auth": [
+        "libs/demo/feature-auth/src/index.ts"
+      ],
+      "@panng-stream/demo/feature-post": ["libs/demo/feature-post/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

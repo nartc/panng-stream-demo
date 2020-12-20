@@ -97,8 +97,11 @@
       "prefix": "panng-stream",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "webpack.config.js"
+            },
             "outputPath": "dist/apps/demo",
             "index": "apps/demo/src/index.html",
             "main": "apps/demo/src/main.ts",
@@ -145,7 +148,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "demo:build"
           },
@@ -209,6 +212,57 @@
           }
         }
       }
+    },
+    "demo-shell": {
+      "projectType": "library",
+      "root": "libs/demo/shell",
+      "sourceRoot": "libs/demo/shell/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/shell/src/**/*.ts",
+              "libs/demo/shell/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-feature-auth": {
+      "projectType": "library",
+      "root": "libs/demo/feature-auth",
+      "sourceRoot": "libs/demo/feature-auth/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/feature-auth/src/**/*.ts",
+              "libs/demo/feature-auth/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-feature-post": {
+      "projectType": "library",
+      "root": "libs/demo/feature-post",
+      "sourceRoot": "libs/demo/feature-post/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/feature-post/src/**/*.ts",
+              "libs/demo/feature-post/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -235,7 +289,8 @@
       "strict": true
     },
     "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "strict": true
     },
     "@nrwl/angular:component": {
       "style": "scss"
