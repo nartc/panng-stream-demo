@@ -8,6 +8,7 @@ import {
 @Component({
   selector: 'demo-auth-layout',
   template: `
+    <p>My nav will go here</p>
     <router-outlet></router-outlet>
   `,
   styles: [

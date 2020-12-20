@@ -14,13 +14,14 @@ interface AuthState {
 export class AuthStore extends ComponentStore<AuthState> {
   readonly user$ = this.select((s) => s.user);
   readonly token$ = this.select((s) => s.token);
+
   readonly isAuth$ = this.select(this.token$, (token) => !!token);
 
   constructor(
     private readonly authService: AuthService,
     private readonly router: Router
   ) {
-    super();
+    super({ token: '', user: undefined });
     this.setInitialAuthState();
     this.localStorageEffect(this.select((s) => s));
   }
