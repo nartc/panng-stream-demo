@@ -10,7 +10,10 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -21,12 +24,19 @@
       "@panng-stream/shared/utilities/types": [
         "libs/shared/utilities/types/src/index.ts"
       ],
-      "@panng-stream/demo/shell": ["libs/demo/shell/src/index.ts"],
-      "@panng-stream/demo/feature-auth": [
-        "libs/demo/feature-auth/src/index.ts"
+      "@panng-stream/demo/shell": [
+        "libs/demo/shell/src/index.ts"
       ],
-      "@panng-stream/demo/feature-post": ["libs/demo/feature-post/src/index.ts"]
+      "@panng-stream/demo/post/feature": [
+        "libs/demo/post/feature/src/index.ts"
+      ],
+      "@panng-stream/demo/auth/feature": [
+        "libs/demo/auth/feature/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

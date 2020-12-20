@@ -18,7 +18,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -37,16 +42,27 @@
     },
     "demo-e2e": {
       "tags": [],
-      "implicitDependencies": ["demo"]
+      "implicitDependencies": [
+        "demo"
+      ]
     },
     "demo-shell": {
-      "tags": ["scope:demo", "type:library"]
+      "tags": [
+        "scope:demo",
+        "type:library"
+      ]
     },
-    "demo-feature-auth": {
-      "tags": ["scope:demo", "type:library"]
+    "demo-post-feature": {
+      "tags": [
+        "scope:demo",
+        "type:library"
+      ]
     },
-    "demo-feature-post": {
-      "tags": ["scope:demo", "type:library"]
+    "demo-auth-feature": {
+      "tags": [
+        "scope:demo",
+        "type:library"
+      ]
     }
   }
 }

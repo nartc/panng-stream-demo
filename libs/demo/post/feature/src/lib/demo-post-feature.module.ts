@@ -10,4 +10,4 @@ import { FeaturePostComponent } from './feature-post.component';
   ],
   declarations: [FeaturePostComponent],
 })
-export class DemoFeaturePostModule {}
+export class DemoPostFeatureModule {}

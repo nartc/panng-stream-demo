@@ -230,35 +230,35 @@
         }
       }
     },
-    "demo-feature-auth": {
+    "demo-post-feature": {
       "projectType": "library",
-      "root": "libs/demo/feature-auth",
-      "sourceRoot": "libs/demo/feature-auth/src",
+      "root": "libs/demo/post/feature",
+      "sourceRoot": "libs/demo/post/feature/src",
       "prefix": "demo",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/demo/feature-auth/src/**/*.ts",
-              "libs/demo/feature-auth/src/**/*.html"
+              "libs/demo/post/feature/src/**/*.ts",
+              "libs/demo/post/feature/src/**/*.html"
             ]
           }
         }
       }
     },
-    "demo-feature-post": {
+    "demo-auth-feature": {
       "projectType": "library",
-      "root": "libs/demo/feature-post",
-      "sourceRoot": "libs/demo/feature-post/src",
+      "root": "libs/demo/auth/feature",
+      "sourceRoot": "libs/demo/auth/feature/src",
       "prefix": "demo",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/demo/feature-post/src/**/*.ts",
-              "libs/demo/feature-post/src/**/*.html"
+              "libs/demo/auth/feature/src/**/*.ts",
+              "libs/demo/auth/feature/src/**/*.html"
             ]
           }
         }

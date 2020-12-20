@@ -1,5 +1,5 @@
 {
-  "extends": ["../../../.eslintrc.json"],
+  "extends": ["../../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -9,7 +9,7 @@
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
       "parserOptions": {
-        "project": ["libs/demo/feature-auth/tsconfig.*?.json"]
+        "project": ["libs/demo/feature-post/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

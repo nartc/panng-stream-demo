@@ -15,8 +15,8 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
           {
             path: 'post',
             loadChildren: () =>
-              import('@panng-stream/demo/feature-post').then(
-                (m) => m.DemoFeaturePostModule
+              import('@panng-stream/demo/post/feature').then(
+                (m) => m.DemoPostFeatureModule
               ),
           },
         ],
@@ -24,7 +24,7 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
       {
         path: '',
         loadChildren: () =>
-          import('@panng-stream/demo/feature-auth').then(
+          import('@panng-stream/demo/auth/feature').then(
             (m) => m.DemoFeatureAuthModule
           ),
       },
