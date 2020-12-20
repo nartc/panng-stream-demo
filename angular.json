@@ -9,16 +9,12 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": [
-              "apps/api/src/assets"
-            ]
+            "assets": ["apps/api/src/assets"]
           },
           "configurations": {
             "production": {
@@ -43,16 +39,12 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/api/**/*.ts"
-            ]
+            "lintFilePatterns": ["apps/api/**/*.ts"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/api"
-          ],
+          "outputs": ["coverage/apps/api"],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -68,9 +60,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/utilities/rx/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/shared/utilities/rx/**/*.ts"]
           }
         }
       }
@@ -83,9 +73,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "libs/shared/utilities/types/**/*.ts"
-            ]
+            "lintFilePatterns": ["libs/shared/utilities/types/**/*.ts"]
           }
         }
       }
@@ -108,13 +96,8 @@
             "polyfills": "apps/demo/src/polyfills.ts",
             "tsConfig": "apps/demo/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "apps/demo/src/favicon.ico",
-              "apps/demo/src/assets"
-            ],
-            "styles": [
-              "apps/demo/src/styles.scss"
-            ],
+            "assets": ["apps/demo/src/favicon.ico", "apps/demo/src/assets"],
+            "styles": ["apps/demo/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -175,9 +158,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/demo"
-          ],
+          "outputs": ["coverage/apps/demo"],
           "options": {
             "jestConfig": "apps/demo/jest.config.js",
             "passWithNoTests": true
@@ -206,9 +187,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/demo-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/demo-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -259,6 +238,53 @@
             "lintFilePatterns": [
               "libs/demo/auth/feature/src/**/*.ts",
               "libs/demo/auth/feature/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-auth-data-access": {
+      "root": "libs/demo/auth/data-access",
+      "sourceRoot": "libs/demo/auth/data-access/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/demo/auth/data-access/**/*.ts"]
+          }
+        }
+      }
+    },
+    "demo-auth-sign-in-feature": {
+      "projectType": "library",
+      "root": "libs/demo/auth/sign-in/feature",
+      "sourceRoot": "libs/demo/auth/sign-in/feature/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/auth/sign-in/feature/src/**/*.ts",
+              "libs/demo/auth/sign-in/feature/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-auth-sign-up-feature": {
+      "projectType": "library",
+      "root": "libs/demo/auth/sign-up/feature",
+      "sourceRoot": "libs/demo/auth/sign-up/feature/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/auth/sign-up/feature/src/**/*.ts",
+              "libs/demo/auth/sign-up/feature/src/**/*.html"
             ]
           }
         }
