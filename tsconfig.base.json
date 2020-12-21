@@ -10,7 +10,7 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": ["es2017", "dom", "esnext.asynciterable"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
@@ -36,8 +36,18 @@
       ],
       "@panng-stream-demo/auth/sign-up/feature": [
         "libs/demo/auth/sign-up/feature/src/index.ts"
-      ]
-    }
+      ],
+      "@panng-stream-api/data-access": ["libs/api/data-access/src/index.ts"],
+      "@panng-stream-api/post": ["libs/api/post/src/index.ts"],
+      "@panng-stream-api/user": ["libs/api/user/src/index.ts"],
+      "@panng-stream-demo/sdk": ["libs/demo/sdk/src/index.ts"],
+      "@panng-stream-api/common": ["libs/api/common/src/index.ts"],
+      "@panng-stream-api/auth": ["libs/api/auth/src/index.ts"],
+      "@panng-stream-api/config": ["libs/api/config/src/index.ts"],
+      "@panng-stream-api/security": ["libs/api/security/src/index.ts"],
+      "@panng-stream-api/comment": ["libs/api/comment/src/index.ts"]
+    },
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules", "tmp"]
 }

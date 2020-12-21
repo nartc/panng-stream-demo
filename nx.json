@@ -56,6 +56,33 @@
     },
     "demo-auth-sign-up-feature": {
       "tags": ["scope:demo", "type:library"]
+    },
+    "api-data-access": {
+      "tags": []
+    },
+    "api-post": {
+      "tags": []
+    },
+    "api-user": {
+      "tags": []
+    },
+    "demo-sdk": {
+      "tags": []
+    },
+    "api-common": {
+      "tags": []
+    },
+    "api-auth": {
+      "tags": []
+    },
+    "api-config": {
+      "tags": []
+    },
+    "api-security": {
+      "tags": []
+    },
+    "api-comment": {
+      "tags": []
     }
   }
 }

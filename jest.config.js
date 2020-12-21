@@ -3,5 +3,8 @@ module.exports = {
     '<rootDir>/apps/panng-demo',
     '<rootDir>/apps/api',
     '<rootDir>/apps/demo',
+    '<rootDir>/libs/api/auth',
+    '<rootDir>/libs/api/config',
+    '<rootDir>/libs/api/security',
   ],
 };

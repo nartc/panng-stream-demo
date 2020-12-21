@@ -1,0 +1,19 @@
+mutation Register($input: RegisterDto!) {
+  register(input: $input) {
+    id
+    name
+    username
+  }
+}
+
+mutation Login($input: LoginDto!) {
+  login(input: $input) {
+    token
+    user {
+      id
+      username
+      email
+      name
+    }
+  }
+}

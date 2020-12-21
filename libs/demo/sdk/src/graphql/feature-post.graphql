@@ -1,0 +1,82 @@
+query Posts {
+  posts {
+    id
+    text
+    author {
+      id
+      email
+      username
+      name
+      avatarUrl
+    }
+    comments {
+      text
+      id
+      author {
+        id
+        email
+        username
+        name
+        avatarUrl
+      }
+    }
+    likedBy {
+      user {
+        id
+      }
+    }
+  }
+}
+
+query Post($id: Float!) {
+  post(id: $id) {
+    id
+    text
+    author {
+      id
+      email
+      username
+      name
+      avatarUrl
+    }
+    comments {
+      text
+      id
+      author {
+        id
+        email
+        username
+        name
+        avatarUrl
+      }
+    }
+    likedBy {
+      user {
+        id
+      }
+    }
+  }
+}
+
+mutation CreatePost($input: CreatePostInput!) {
+  createPost(input: $input) {
+    id
+  }
+}
+
+mutation LikePost($id: Float!) {
+  like(id: $id) {
+    user {
+      id
+      username
+    }
+  }
+}
+
+mutation UnlikePost($id: Float!) {
+  unlike(id: $id) {
+    createdAt
+    updatedAt
+  }
+}
+

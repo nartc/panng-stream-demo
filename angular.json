@@ -289,6 +289,151 @@
           }
         }
       }
+    },
+    "api-data-access": {
+      "root": "libs/api/data-access",
+      "sourceRoot": "libs/api/data-access/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/data-access/**/*.ts"]
+          }
+        }
+      }
+    },
+    "api-post": {
+      "root": "libs/api/post",
+      "sourceRoot": "libs/api/post/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/post/**/*.ts"]
+          }
+        }
+      }
+    },
+    "api-user": {
+      "root": "libs/api/user",
+      "sourceRoot": "libs/api/user/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/user/**/*.ts"]
+          }
+        }
+      }
+    },
+    "demo-sdk": {
+      "projectType": "library",
+      "root": "libs/demo/sdk",
+      "sourceRoot": "libs/demo/sdk/src",
+      "prefix": "panng-stream",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/sdk/src/**/*.ts",
+              "libs/demo/sdk/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "api-common": {
+      "root": "libs/api/common",
+      "sourceRoot": "libs/api/common/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/common/**/*.ts"]
+          }
+        }
+      }
+    },
+    "api-auth": {
+      "root": "libs/api/auth",
+      "sourceRoot": "libs/api/auth/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/auth/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/auth"],
+          "options": {
+            "jestConfig": "libs/api/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-config": {
+      "root": "libs/api/config",
+      "sourceRoot": "libs/api/config/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/config/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/config"],
+          "options": {
+            "jestConfig": "libs/api/config/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-security": {
+      "root": "libs/api/security",
+      "sourceRoot": "libs/api/security/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/security/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api/security"],
+          "options": {
+            "jestConfig": "libs/api/security/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "api-comment": {
+      "root": "libs/api/comment",
+      "sourceRoot": "libs/api/comment/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api/comment/**/*.ts"]
+          }
+        }
+      }
     }
   },
   "cli": {

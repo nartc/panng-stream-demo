@@ -1,26 +1,25 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { ApolloAngularSDK } from '../../../../sdk/src/generated/graphql';
 
 @Component({
   selector: 'demo-feature-post',
   template: `
-    <p>
-      feature-post works!
-    </p>
+    <pre>{{ postsResponse$ | async | json }}</pre>
   `,
   styles: [
     `
       :host {
         display: block;
       }
-    `
+    `,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class FeaturePostComponent implements OnInit {
+export class FeaturePostComponent {
+  postsResponse$ = this.sdk.posts().pipe(map((result) => result.data.posts));
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private readonly sdk: ApolloAngularSDK) {
+    this.sdk.createPost({ input: { text: 'noice' } }).subscribe(console.log);
   }
-
 }

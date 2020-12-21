@@ -1,0 +1,6 @@
+mutation CreateComment($input: CreateCommentDto!) {
+  create(input: $input) {
+    id
+    text
+  }
+}

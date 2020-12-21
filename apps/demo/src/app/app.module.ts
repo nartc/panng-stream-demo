@@ -5,10 +5,11 @@ import { authInterceptorProvider } from '@panng-stream-demo/auth/data-access';
 import { DemoShellModule } from '@panng-stream-demo/shell';
 
 import { AppComponent } from './app.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HttpClientModule, DemoShellModule],
+  imports: [BrowserModule, HttpClientModule, DemoShellModule, GraphQLModule],
   providers: [authInterceptorProvider],
   bootstrap: [AppComponent],
 })
