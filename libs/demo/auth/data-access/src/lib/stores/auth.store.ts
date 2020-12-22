@@ -81,4 +81,16 @@ export class AuthStore extends ComponentStore<AuthState> {
       )
     )
   );
+
+  readonly signOutEffect = this.effect(($) =>
+    $.pipe(
+      tap(() => {
+        if (confirm('You want to sign out?')) {
+          localStorage.removeItem('user');
+          localStorage.removeItem('token');
+          this.router.navigate(['/sign-in']);
+        }
+      })
+    )
+  );
 }

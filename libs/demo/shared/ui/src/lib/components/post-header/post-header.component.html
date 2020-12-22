@@ -1,0 +1,16 @@
+<header class="flex font-mono">
+  <img
+    class="h-16 w-16 rounded-full object-cover"
+    [src]="avatarUrl"
+    alt="author avatar"
+  />
+  <section class="flex flex-col ml-4 mt-4">
+    <span class="text-gray-600 font-bold leading-3">
+      {{ username }}
+    </span>
+    <span class="text-gray-400 text-sm" *ngIf="name">({{ name }})</span>
+  </section>
+  <span class="ml-auto text-gray-400 text-sm">
+    {{ updatedAt | date: 'short' }}
+  </span>
+</header>

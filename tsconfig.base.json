@@ -22,9 +22,6 @@
         "libs/shared/utilities/types/src/index.ts"
       ],
       "@panng-stream-demo/shell": ["libs/demo/shell/src/index.ts"],
-      "@panng-stream-demo/post/feature": [
-        "libs/demo/post/feature/src/index.ts"
-      ],
       "@panng-stream-demo/auth/feature": [
         "libs/demo/auth/feature/src/index.ts"
       ],
@@ -48,7 +45,19 @@
       "@panng-stream-api/comment": ["libs/api/comment/src/index.ts"],
       "@panng-stream-demo/auth/util": ["libs/demo/auth/util/src/index.ts"],
       "@panng-stream-demo/auth/ui": ["libs/demo/auth/ui/src/index.ts"],
-      "@panng-stream-demo/shared/ui": ["libs/demo/shared/ui/src/index.ts"]
+      "@panng-stream-demo/shared/ui": ["libs/demo/shared/ui/src/index.ts"],
+      "@panng-stream-demo/post/post-list/feature": [
+        "libs/demo/post/post-list/feature/src/index.ts"
+      ],
+      "@panng-stream-demo/post/data-access": [
+        "libs/demo/post/data-access/src/index.ts"
+      ],
+      "@panng-stream-demo/post/post-list/ui": [
+        "libs/demo/post/post-list/ui/src/index.ts"
+      ],
+      "@panng-stream-demo/post/post-detail/feature": [
+        "libs/demo/post/post-detail/feature/src/index.ts"
+      ]
     },
     "allowSyntheticDefaultImports": true
   },

@@ -2,23 +2,15 @@ query Posts {
   posts {
     id
     text
+    updatedAt
     author {
       id
-      email
       username
       name
       avatarUrl
     }
     comments {
-      text
       id
-      author {
-        id
-        email
-        username
-        name
-        avatarUrl
-      }
     }
     likedBy {
       user {
@@ -32,6 +24,7 @@ query Post($id: Float!) {
   post(id: $id) {
     id
     text
+    updatedAt
     author {
       id
       email
@@ -42,9 +35,9 @@ query Post($id: Float!) {
     comments {
       text
       id
+      updatedAt
       author {
         id
-        email
         username
         name
         avatarUrl
@@ -61,6 +54,22 @@ query Post($id: Float!) {
 mutation CreatePost($input: CreatePostInput!) {
   createPost(input: $input) {
     id
+    author {
+      id
+      username
+      name
+      avatarUrl
+    }
+    comments {
+      id
+    }
+    likedBy {
+      user {
+        id
+      }
+    }
+    text
+    updatedAt
   }
 }
 
@@ -75,8 +84,10 @@ mutation LikePost($id: Float!) {
 
 mutation UnlikePost($id: Float!) {
   unlike(id: $id) {
-    createdAt
-    updatedAt
+    user {
+      id
+      username
+    }
   }
 }
 

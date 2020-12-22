@@ -42,9 +42,6 @@
     "demo-shell": {
       "tags": ["scope:demo", "type:library"]
     },
-    "demo-post-feature": {
-      "tags": ["scope:demo", "type:library"]
-    },
     "demo-auth-feature": {
       "tags": ["scope:demo", "type:library"]
     },
@@ -91,6 +88,18 @@
       "tags": []
     },
     "demo-shared-ui": {
+      "tags": []
+    },
+    "demo-post-post-list-feature": {
+      "tags": []
+    },
+    "demo-post-data-access": {
+      "tags": []
+    },
+    "demo-post-post-list-ui": {
+      "tags": []
+    },
+    "demo-post-post-detail-feature": {
       "tags": []
     }
   }

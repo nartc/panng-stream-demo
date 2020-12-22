@@ -1,0 +1,33 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <span *ngIf="vm.loading; else done">Loading...</span>
+  <ng-template #done>
+    <demo-textarea-control
+      (submitClick)="onSubmit($event)"
+    ></demo-textarea-control>
+    <main
+      class="mt-4 flex flex-col space-y-4 font-mono"
+      *ngIf="!vm.isEmpty; else isEmpty"
+    >
+      <div
+        *ngFor="let post of vm.posts"
+        class="border shadow rounded p-4 flex flex-col space-y-4"
+      >
+        <demo-post-header
+          [name]="post?.author?.name"
+          [username]="post?.author?.username"
+          [avatarUrl]="post?.author?.avatarUrl"
+          [updatedAt]="post?.updatedAt"
+        ></demo-post-header>
+        <demo-post-list-item
+          [text]="post?.text"
+          [liked]="post?.liked"
+          [likedByCount]="post?.likedBy?.length"
+          [commentsCount]="post?.comments?.length"
+          (likeClick)="onLikeClick(post.id)"
+          (commentClick)="onCommentClick(post.id)"
+        ></demo-post-list-item>
+      </div>
+    </main>
+    <ng-template #isEmpty>No posts.</ng-template>
+  </ng-template>
+</ng-container>

@@ -15,11 +15,25 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
           { path: '', redirectTo: 'post', pathMatch: 'full' },
           {
             path: 'post',
-            canLoad: [AuthGuard],
-            loadChildren: () =>
-              import('@panng-stream-demo/post/feature').then(
-                (m) => m.DemoPostFeatureModule
-              ),
+            canActivateChild: [AuthGuard],
+            children: [
+              {
+                path: '',
+                canLoad: [AuthGuard],
+                loadChildren: () =>
+                  import('@panng-stream-demo/post/post-list/feature').then(
+                    (m) => m.DemoPostPostListFeatureModule
+                  ),
+              },
+              {
+                path: ':id',
+                canLoad: [AuthGuard],
+                loadChildren: () =>
+                  import('@panng-stream-demo/post/post-detail/feature').then(
+                    (m) => m.DemoPostPostDetailFeatureModule
+                  ),
+              },
+            ],
           },
         ],
       },

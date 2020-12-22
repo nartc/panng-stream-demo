@@ -1,0 +1,18 @@
+<nav class="w-full h-20 bg-blue-500 px-4 text-white shadow flex items-center">
+  <ng-container *ngIf="user$ | async as user">
+    <div
+      class="flex items-center ml-auto cursor-pointer"
+      (click)="onUserClick()"
+    >
+      <img
+        class="h-12 w-12 rounded-full"
+        [src]="user.avatarUrl"
+        alt="current user avatar"
+      />
+      <span class="ml-2 font-mono">{{ user.name || user.username }}</span>
+    </div>
+  </ng-container>
+</nav>
+<main class="container p-8 mx-auto">
+  <router-outlet></router-outlet>
+</main>

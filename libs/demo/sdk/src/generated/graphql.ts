@@ -156,7 +156,11 @@ export type CreateCommentMutation = (
   { __typename?: 'Mutation' }
   & { create?: Maybe<(
     { __typename?: 'Comment' }
-    & Pick<Comment, 'id' | 'text'>
+    & Pick<Comment, 'id' | 'text' | 'updatedAt'>
+    & { author?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'username' | 'name' | 'avatarUrl'>
+    )> }
   )> }
 );
 
@@ -167,17 +171,13 @@ export type PostsQuery = (
   { __typename?: 'Query' }
   & { posts?: Maybe<Array<(
     { __typename?: 'Post' }
-    & Pick<Post, 'id' | 'text'>
+    & Pick<Post, 'id' | 'text' | 'updatedAt'>
     & { author?: Maybe<(
       { __typename?: 'User' }
-      & Pick<User, 'id' | 'email' | 'username' | 'name' | 'avatarUrl'>
+      & Pick<User, 'id' | 'username' | 'name' | 'avatarUrl'>
     )>, comments?: Maybe<Array<(
       { __typename?: 'Comment' }
-      & Pick<Comment, 'text' | 'id'>
-      & { author?: Maybe<(
-        { __typename?: 'User' }
-        & Pick<User, 'id' | 'email' | 'username' | 'name' | 'avatarUrl'>
-      )> }
+      & Pick<Comment, 'id'>
     )>>, likedBy?: Maybe<Array<(
       { __typename?: 'PostLike' }
       & { user?: Maybe<(
@@ -197,16 +197,16 @@ export type PostQuery = (
   { __typename?: 'Query' }
   & { post?: Maybe<(
     { __typename?: 'Post' }
-    & Pick<Post, 'id' | 'text'>
+    & Pick<Post, 'id' | 'text' | 'updatedAt'>
     & { author?: Maybe<(
       { __typename?: 'User' }
       & Pick<User, 'id' | 'email' | 'username' | 'name' | 'avatarUrl'>
     )>, comments?: Maybe<Array<(
       { __typename?: 'Comment' }
-      & Pick<Comment, 'text' | 'id'>
+      & Pick<Comment, 'text' | 'id' | 'updatedAt'>
       & { author?: Maybe<(
         { __typename?: 'User' }
-        & Pick<User, 'id' | 'email' | 'username' | 'name' | 'avatarUrl'>
+        & Pick<User, 'id' | 'username' | 'name' | 'avatarUrl'>
       )> }
     )>>, likedBy?: Maybe<Array<(
       { __typename?: 'PostLike' }
@@ -227,7 +227,20 @@ export type CreatePostMutation = (
   { __typename?: 'Mutation' }
   & { createPost?: Maybe<(
     { __typename?: 'Post' }
-    & Pick<Post, 'id'>
+    & Pick<Post, 'id' | 'text' | 'updatedAt'>
+    & { author?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'username' | 'name' | 'avatarUrl'>
+    )>, comments?: Maybe<Array<(
+      { __typename?: 'Comment' }
+      & Pick<Comment, 'id'>
+    )>>, likedBy?: Maybe<Array<(
+      { __typename?: 'PostLike' }
+      & { user?: Maybe<(
+        { __typename?: 'User' }
+        & Pick<User, 'id'>
+      )> }
+    )>> }
   )> }
 );
 
@@ -256,7 +269,10 @@ export type UnlikePostMutation = (
   { __typename?: 'Mutation' }
   & { unlike?: Maybe<(
     { __typename?: 'PostLike' }
-    & Pick<PostLike, 'createdAt' | 'updatedAt'>
+    & { user?: Maybe<(
+      { __typename?: 'User' }
+      & Pick<User, 'id' | 'username'>
+    )> }
   )> }
 );
 
@@ -285,7 +301,7 @@ export type LoginMutation = (
     & Pick<LoginResultDto, 'token'>
     & { user?: Maybe<(
       { __typename?: 'User' }
-      & Pick<User, 'id' | 'username' | 'email' | 'name'>
+      & Pick<User, 'id' | 'username' | 'email' | 'name' | 'avatarUrl' | 'bio' | 'location'>
     )> }
   )> }
 );
@@ -295,6 +311,13 @@ export const CreateCommentDocument = gql`
   create(input: $input) {
     id
     text
+    updatedAt
+    author {
+      id
+      username
+      name
+      avatarUrl
+    }
   }
 }
     `;
@@ -314,23 +337,15 @@ export const PostsDocument = gql`
   posts {
     id
     text
+    updatedAt
     author {
       id
-      email
       username
       name
       avatarUrl
     }
     comments {
-      text
       id
-      author {
-        id
-        email
-        username
-        name
-        avatarUrl
-      }
     }
     likedBy {
       user {
@@ -356,6 +371,7 @@ export const PostDocument = gql`
   post(id: $id) {
     id
     text
+    updatedAt
     author {
       id
       email
@@ -366,9 +382,9 @@ export const PostDocument = gql`
     comments {
       text
       id
+      updatedAt
       author {
         id
-        email
         username
         name
         avatarUrl
@@ -397,6 +413,22 @@ export const CreatePostDocument = gql`
     mutation CreatePost($input: CreatePostInput!) {
   createPost(input: $input) {
     id
+    author {
+      id
+      username
+      name
+      avatarUrl
+    }
+    comments {
+      id
+    }
+    likedBy {
+      user {
+        id
+      }
+    }
+    text
+    updatedAt
   }
 }
     `;
@@ -435,8 +467,10 @@ export const LikePostDocument = gql`
 export const UnlikePostDocument = gql`
     mutation UnlikePost($id: Float!) {
   unlike(id: $id) {
-    createdAt
-    updatedAt
+    user {
+      id
+      username
+    }
   }
 }
     `;
@@ -480,6 +514,9 @@ export const LoginDocument = gql`
       username
       email
       name
+      avatarUrl
+      bio
+      location
     }
   }
 }

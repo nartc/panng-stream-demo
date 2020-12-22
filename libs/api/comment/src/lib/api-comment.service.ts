@@ -13,6 +13,9 @@ export class ApiCommentService {
         post: { connect: { id: dto.postId } },
         text: dto.text,
       },
+      include: {
+        author: true,
+      },
     });
   }
 }

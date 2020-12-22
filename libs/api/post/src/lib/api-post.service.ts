@@ -22,7 +22,7 @@ export class ApiPostService {
     return this.data.post.findUnique({
       where: { id },
       include: {
-        comments: { include: { author: true } },
+        comments: { include: { author: true }, orderBy: { createdAt: 'desc' } },
         author: true,
         likedBy: { include: { user: true } },
       },
@@ -32,6 +32,11 @@ export class ApiPostService {
   createPost(username: string, input: CreatePostInput) {
     return this.data.post.create({
       data: { text: input.text, author: { connect: { username } } },
+      include: {
+        comments: { include: { author: true } },
+        author: true,
+        likedBy: { include: { user: true } },
+      },
     });
   }
 

@@ -2,5 +2,12 @@ mutation CreateComment($input: CreateCommentDto!) {
   create(input: $input) {
     id
     text
+    updatedAt
+    author {
+      id
+      username
+      name
+      avatarUrl
+    }
   }
 }

@@ -1,16 +1,10 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  OnInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AuthStore } from '@panng-stream-demo/auth/data-access';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'demo-auth-layout',
-  template: `
-    <p>My nav will go here</p>
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './auth-layout.component.html',
   styles: [
     `
       :host {
@@ -18,11 +12,16 @@ import {
       }
     `,
   ],
-  encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthLayoutComponent implements OnInit {
-  constructor() {}
+export class AuthLayoutComponent {
+  readonly user$ = this.authStore.user$.pipe(
+    filter((user) => !!Object.keys(user).length)
+  );
 
-  ngOnInit(): void {}
+  constructor(private readonly authStore: AuthStore) {}
+
+  onUserClick(): void {
+    this.authStore.signOutEffect();
+  }
 }

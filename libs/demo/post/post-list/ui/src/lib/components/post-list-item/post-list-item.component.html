@@ -1,0 +1,27 @@
+<section class="flex flex-col divide-y divide-gray-200">
+  <p class="mb-2">{{ text }}</p>
+  <footer class="flex items-center space-x-2 pt-4">
+    <button
+      type="button"
+      [class]="{
+        'text-white': liked,
+        'bg-red-400': liked,
+        'text-red-400': !liked,
+        'bg-white': !liked
+      }"
+      class="px-2 py-1 shadow rounded text-xs border border-red-400"
+      (click)="likeClick.emit()"
+    >
+      {{ likedByCount }}
+      Like
+    </button>
+    <button
+      type="button"
+      class="px-2 py-1 shadow rounded text-white text-xs bg-blue-400"
+      (click)="commentClick.emit()"
+    >
+      {{ commentsCount }}
+      Comment{{ commentsCount > 1 ? 's' : '' }}
+    </button>
+  </footer>
+</section>
