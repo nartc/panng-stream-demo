@@ -2,7 +2,7 @@
   <span *ngIf="vm.loading; else done">Loading...</span>
 
   <ng-template #done>
-    <div class="flex flex-col space-y-4">
+    <div class="flex flex-col space-y-4 font-mono">
       <div class="border shadow rounded p-4 flex flex-col space-y-4">
         <demo-post-header
           [name]="vm.post?.author?.name"
