@@ -434,6 +434,61 @@
           }
         }
       }
+    },
+    "demo-auth-util": {
+      "root": "libs/demo/auth/util",
+      "sourceRoot": "libs/demo/auth/util/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/demo/auth/util/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/demo/auth/util"],
+          "options": {
+            "jestConfig": "libs/demo/auth/util/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-auth-ui": {
+      "projectType": "library",
+      "root": "libs/demo/auth/ui",
+      "sourceRoot": "libs/demo/auth/ui/src",
+      "prefix": "panng-stream",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/auth/ui/src/**/*.ts",
+              "libs/demo/auth/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-shared-ui": {
+      "projectType": "library",
+      "root": "libs/demo/shared/ui",
+      "sourceRoot": "libs/demo/shared/ui/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/shared/ui/src/**/*.ts",
+              "libs/demo/shared/ui/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {

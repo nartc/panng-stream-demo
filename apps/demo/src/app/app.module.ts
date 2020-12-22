@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { authInterceptorProvider } from '@panng-stream-demo/auth/data-access';
+import { authInterceptorProvider } from '@panng-stream-demo/auth/util';
 import { DemoShellModule } from '@panng-stream-demo/shell';
 
 import { AppComponent } from './app.component';

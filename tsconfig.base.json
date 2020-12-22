@@ -45,7 +45,10 @@
       "@panng-stream-api/auth": ["libs/api/auth/src/index.ts"],
       "@panng-stream-api/config": ["libs/api/config/src/index.ts"],
       "@panng-stream-api/security": ["libs/api/security/src/index.ts"],
-      "@panng-stream-api/comment": ["libs/api/comment/src/index.ts"]
+      "@panng-stream-api/comment": ["libs/api/comment/src/index.ts"],
+      "@panng-stream-demo/auth/util": ["libs/demo/auth/util/src/index.ts"],
+      "@panng-stream-demo/auth/ui": ["libs/demo/auth/ui/src/index.ts"],
+      "@panng-stream-demo/shared/ui": ["libs/demo/shared/ui/src/index.ts"]
     },
     "allowSyntheticDefaultImports": true
   },

@@ -1,0 +1,70 @@
+<demo-auth-wrapper title="Sign up">
+  <ng-template demoTemplate="content">
+    <form
+      class="flex flex-col space-y-4 w-96 font-mono"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <section class="flex flex-col space-y-4">
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="text"
+          formControlName="username"
+          placeholder="username"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="email"
+          formControlName="email"
+          placeholder="email"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="password"
+          formControlName="password"
+          placeholder="password"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="text"
+          formControlName="name"
+          placeholder="name"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="text"
+          formControlName="location"
+          placeholder="location"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="text"
+          formControlName="bio"
+          placeholder="bio"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="text"
+          formControlName="avatarUrl"
+          placeholder="avatarUrl"
+        />
+      </section>
+      <section class="flex items-center justify-between">
+        <button
+          type="submit"
+          class="px-4 py-2 bg-blue-500 hover:bg-blue-400 rounded text-white"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded text-white"
+          routerLink="/sign-in"
+        >
+          Sign in here
+        </button>
+      </section>
+    </form>
+  </ng-template>
+</demo-auth-wrapper>

@@ -1,0 +1,40 @@
+<demo-auth-wrapper title="Sign in">
+  <ng-template demoTemplate="content">
+    <form
+      class="flex flex-col space-y-4 w-96 font-mono"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+    >
+      <section class="flex flex-col space-y-4">
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="text"
+          formControlName="username"
+          placeholder="username"
+        />
+        <input
+          class="p-2 border border-gray-600 rounded"
+          type="password"
+          formControlName="password"
+          placeholder="password"
+        />
+      </section>
+      <section class="flex items-center justify-between">
+        <button
+          type="submit"
+          class="px-4 py-2 bg-blue-500 hover:bg-blue-400 rounded text-white"
+          (click)="onSubmit()"
+        >
+          Submit
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded text-white"
+          routerLink="/sign-up"
+        >
+          Sign up here
+        </button>
+      </section>
+    </form>
+  </ng-template>
+</demo-auth-wrapper>

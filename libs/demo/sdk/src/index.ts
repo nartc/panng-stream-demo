@@ -1,1 +1,1 @@
-export * from './lib/demo-sdk.module';
+export * from './generated/graphql';

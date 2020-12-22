@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ComponentStore, tapResponse } from '@ngrx/component-store';
-import { of } from 'rxjs';
+import { LoginDto, RegisterDto, User } from '@panng-stream-demo/sdk';
 import { exhaustMap, tap } from 'rxjs/operators';
 import { AuthService } from '../services';
 
 interface AuthState {
   token: string;
-  user: unknown;
+  user: User;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -21,7 +21,7 @@ export class AuthStore extends ComponentStore<AuthState> {
     private readonly authService: AuthService,
     private readonly router: Router
   ) {
-    super({ token: '', user: undefined });
+    super({ token: '', user: {} });
     this.setInitialAuthState();
     this.localStorageEffect(this.select((s) => s));
   }
@@ -36,7 +36,7 @@ export class AuthStore extends ComponentStore<AuthState> {
           : { ...state, token }
       );
     } else {
-      this.setState({ token: '', user: undefined });
+      this.setState({ token: '', user: {} });
     }
   }
 
@@ -53,10 +53,32 @@ export class AuthStore extends ComponentStore<AuthState> {
     )
   );
 
-  readonly signInEffect = this.effect(($) =>
-    $.pipe(
-      exhaustMap(() => of('nice').pipe(tapResponse(console.log, console.error)))
+  readonly signInEffect = this.effect<LoginDto>((loginDto$) =>
+    loginDto$.pipe(
+      exhaustMap((loginDto) =>
+        this.authService.login(loginDto).pipe(
+          tapResponse(({ data }) => {
+            if (data?.login) {
+              this.setState({
+                token: data.login.token,
+                user: data.login.user as User,
+              });
+              this.router.navigate(['/']);
+            }
+          }, console.error)
+        )
+      )
     )
   );
-  readonly signUpEffect = this.effect(($) => $.pipe());
+  readonly signUpEffect = this.effect<RegisterDto>((registerDto$) =>
+    registerDto$.pipe(
+      exhaustMap((registerDto) =>
+        this.authService.register(registerDto).pipe(
+          tapResponse(() => {
+            this.router.navigate(['/sign-in']);
+          }, console.error)
+        )
+      )
+    )
+  );
 }

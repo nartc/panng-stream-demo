@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import type { CanActivate, CanActivateChild, CanLoad } from '@angular/router';
 import { Router } from '@angular/router';
+import { AuthStore } from '@panng-stream-demo/auth/data-access';
 import type { Observable } from 'rxjs';
 import { take, tap } from 'rxjs/operators';
-import { AuthStore } from '../stores';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate, CanLoad, CanActivateChild {

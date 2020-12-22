@@ -83,6 +83,15 @@
     },
     "api-comment": {
       "tags": []
+    },
+    "demo-auth-util": {
+      "tags": []
+    },
+    "demo-auth-ui": {
+      "tags": []
+    },
+    "demo-shared-ui": {
+      "tags": []
     }
   }
 }

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from '@panng-stream-demo/auth/util';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
           { path: '', redirectTo: 'post', pathMatch: 'full' },
           {
             path: 'post',
+            canLoad: [AuthGuard],
             loadChildren: () =>
               import('@panng-stream-demo/post/feature').then(
                 (m) => m.DemoPostFeatureModule

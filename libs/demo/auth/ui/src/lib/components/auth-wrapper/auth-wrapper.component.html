@@ -1,0 +1,8 @@
+<div class="w-screen h-screen flex justify-center items-center">
+  <div class="p-8 rounded border shadow">
+    <h1 class="text-2xl font-bold font-mono pb-4">{{ title }}</h1>
+    <ng-container *ngIf="contentTemplate">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </ng-container>
+  </div>
+</div>
