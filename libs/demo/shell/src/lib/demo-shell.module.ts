@@ -19,7 +19,6 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
             children: [
               {
                 path: '',
-                canLoad: [AuthGuard],
                 loadChildren: () =>
                   import('@panng-stream-demo/post/post-list/feature').then(
                     (m) => m.DemoPostPostListFeatureModule
@@ -27,7 +26,6 @@ import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
               },
               {
                 path: ':id',
-                canLoad: [AuthGuard],
                 loadChildren: () =>
                   import('@panng-stream-demo/post/post-detail/feature').then(
                     (m) => m.DemoPostPostDetailFeatureModule
