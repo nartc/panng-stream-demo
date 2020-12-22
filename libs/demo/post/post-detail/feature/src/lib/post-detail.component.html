@@ -22,13 +22,14 @@
       <ng-container *ngIf="vm.post?.comments?.length">
         <div
           *ngFor="let comment of vm.post?.comments"
-          class="border shadow rounded p-4 flex flex-col space-y-4"
+          class="border shadow rounded-2xl p-4 flex flex-col space-y-4 ml-20"
         >
           <demo-post-header
             [name]="comment?.author?.name"
             [username]="comment?.author?.username"
             [avatarUrl]="comment?.author?.avatarUrl"
             [updatedAt]="comment?.updatedAt"
+            [isComment]="true"
           ></demo-post-header>
           <p>{{ comment?.text }}</p>
         </div>

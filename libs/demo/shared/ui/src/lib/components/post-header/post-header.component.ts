@@ -17,4 +17,5 @@ export class PostHeaderComponent {
   @Input() username!: string;
   @Input() name!: string;
   @Input() updatedAt!: Date;
+  @Input() isComment = false;
 }

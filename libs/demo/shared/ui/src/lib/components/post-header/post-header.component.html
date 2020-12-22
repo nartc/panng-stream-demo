@@ -1,10 +1,19 @@
-<header class="flex font-mono">
+<header class="flex font-mono" [class.relative]="isComment">
   <img
-    class="h-16 w-16 rounded-full object-cover"
+    class="rounded-full object-c"
+    [class]="
+      isComment
+        ? ['absolute', '-top-4', '-left-20', 'h-12', 'w-12']
+        : ['h-16', 'w-16']
+    "
     [src]="avatarUrl"
     alt="author avatar"
   />
-  <section class="flex flex-col ml-4 mt-4">
+  <section
+    class="flex flex-col"
+    [class.ml-4]="!isComment"
+    [class.mt-4]="!isComment"
+  >
     <span class="text-gray-600 font-bold leading-3">
       {{ username }}
     </span>
