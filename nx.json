@@ -18,98 +18,208 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
   "projects": {
     "api": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "type:application"
+      ]
     },
     "shared-utilities-rx": {
-      "tags": []
+      "tags": [
+        "scope:shared",
+        "type:util"
+      ]
     },
     "shared-utilities-types": {
-      "tags": []
+      "tags": [
+        "scope:shared",
+        "type:util"
+      ]
     },
     "demo": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "type:application"
+      ]
     },
     "demo-e2e": {
       "tags": [],
-      "implicitDependencies": ["demo"]
+      "implicitDependencies": [
+        "demo"
+      ]
     },
     "demo-shell": {
-      "tags": ["scope:demo", "type:library"]
+      "tags": [
+        "scope:demo",
+        "type:feature"
+      ]
     },
     "demo-auth-data-access": {
-      "tags": ["scope:demo", "type:library"]
+      "tags": [
+        "scope:demo",
+        "context:auth",
+        "type:data-access"
+      ]
     },
     "api-data-access": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "type:data-access"
+      ]
     },
     "api-post": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "context:post",
+        "type:feature"
+      ]
     },
     "api-user": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "context:user",
+        "type:feature"
+      ]
     },
     "demo-sdk": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "type:data-access"
+      ]
     },
     "api-common": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "type:util"
+      ]
     },
     "api-auth": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "context:auth",
+        "type:feature"
+      ]
     },
     "api-config": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "type:util"
+      ]
     },
     "api-security": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "context:security",
+        "type:feature"
+      ]
     },
     "api-comment": {
-      "tags": []
+      "tags": [
+        "scope:api",
+        "context:comment",
+        "type:feature"
+      ]
     },
     "demo-auth-util": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "context:auth",
+        "type:util"
+      ]
     },
     "demo-post-data-access": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "context:post",
+        "type:data-access"
+      ]
     },
     "demo-auth-features-shell": {
-      "tags": ["scope:demo", "type:library"]
+      "tags": [
+        "scope:demo",
+        "context:auth",
+        "type:feature"
+      ]
     },
     "demo-auth-features-sign-in": {
-      "tags": ["scope:demo", "type:library"]
+      "tags": [
+        "scope:demo",
+        "context:sign-in",
+        "type:feature"
+      ]
     },
     "demo-auth-features-sign-up": {
-      "tags": ["scope:demo", "type:library"]
+      "tags": [
+        "scope:demo",
+        "context:sign-up",
+        "type:feature"
+      ]
     },
     "demo-auth-ui-auth-wrapper": {
-      "tags": ["scope:demo", "type:ui"]
+      "tags": [
+        "scope:demo",
+        "context:auth",
+        "type:ui"
+      ]
     },
     "demo-post-features-details": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "context:post-details",
+        "type:feature"
+      ]
     },
     "demo-post-features-list": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "context:post-list",
+        "type:feature"
+      ]
     },
     "demo-post-ui-list-item": {
-      "tags": ["scope:demo", "type:ui"]
+      "tags": [
+        "scope:demo",
+        "context:post",
+        "type:ui"
+      ]
     },
     "demo-shared-ui-destroyable": {
-      "tags": []
+      "tags": [
+        "scope:demo",
+        "context:shared",
+        "type:util"
+      ]
     },
     "demo-shared-ui-post-header": {
-      "tags": ["scope:demo", "type:ui"]
+      "tags": [
+        "scope:demo",
+        "context:shared",
+        "type:ui"
+      ]
     },
     "demo-shared-ui-forms-textarea-control": {
-      "tags": ["scope:demo", "type:ui"]
+      "tags": [
+        "scope:demo",
+        "context:shared",
+        "type:ui"
+      ]
     },
     "demo-shared-ui-demo-template": {
-      "tags": ["scope:demo", "type:ui"]
+      "tags": [
+        "scope:demo",
+        "context:shared",
+        "type:ui"
+      ]
     }
   }
 }
