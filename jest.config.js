@@ -7,5 +7,7 @@ module.exports = {
     '<rootDir>/libs/api/config',
     '<rootDir>/libs/api/security',
     '<rootDir>/libs/demo/auth/util',
+    '<rootDir>/libs/demo/auth/ui/auth-wrapper',
+    '<rootDir>/libs/demo/post/ui/list-item',
   ],
 };

@@ -209,23 +209,6 @@
         }
       }
     },
-    "demo-auth-feature": {
-      "projectType": "library",
-      "root": "libs/demo/auth/feature",
-      "sourceRoot": "libs/demo/auth/feature/src",
-      "prefix": "demo",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/demo/auth/feature/src/**/*.ts",
-              "libs/demo/auth/feature/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "demo-auth-data-access": {
       "root": "libs/demo/auth/data-access",
       "sourceRoot": "libs/demo/auth/data-access/src",
@@ -235,40 +218,6 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/demo/auth/data-access/**/*.ts"]
-          }
-        }
-      }
-    },
-    "demo-auth-sign-in-feature": {
-      "projectType": "library",
-      "root": "libs/demo/auth/sign-in/feature",
-      "sourceRoot": "libs/demo/auth/sign-in/feature/src",
-      "prefix": "demo",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/demo/auth/sign-in/feature/src/**/*.ts",
-              "libs/demo/auth/sign-in/feature/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "demo-auth-sign-up-feature": {
-      "projectType": "library",
-      "root": "libs/demo/auth/sign-up/feature",
-      "sourceRoot": "libs/demo/auth/sign-up/feature/src",
-      "prefix": "demo",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/demo/auth/sign-up/feature/src/**/*.ts",
-              "libs/demo/auth/sign-up/feature/src/**/*.html"
-            ]
           }
         }
       }
@@ -439,57 +388,6 @@
         }
       }
     },
-    "demo-auth-ui": {
-      "projectType": "library",
-      "root": "libs/demo/auth/ui",
-      "sourceRoot": "libs/demo/auth/ui/src",
-      "prefix": "panng-stream",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/demo/auth/ui/src/**/*.ts",
-              "libs/demo/auth/ui/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "demo-shared-ui": {
-      "projectType": "library",
-      "root": "libs/demo/shared/ui",
-      "sourceRoot": "libs/demo/shared/ui/src",
-      "prefix": "demo",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/demo/shared/ui/src/**/*.ts",
-              "libs/demo/shared/ui/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "demo-post-post-list-feature": {
-      "projectType": "library",
-      "root": "libs/demo/post/post-list/feature",
-      "sourceRoot": "libs/demo/post/post-list/feature/src",
-      "prefix": "demo",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/demo/post/post-list/feature/src/**/*.ts",
-              "libs/demo/post/post-list/feature/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "demo-post-data-access": {
       "root": "libs/demo/post/data-access",
       "sourceRoot": "libs/demo/post/data-access/src",
@@ -503,35 +401,200 @@
         }
       }
     },
-    "demo-post-post-list-ui": {
+    "demo-auth-features-shell": {
       "projectType": "library",
-      "root": "libs/demo/post/post-list/ui",
-      "sourceRoot": "libs/demo/post/post-list/ui/src",
+      "root": "libs/demo/auth/features/shell",
+      "sourceRoot": "libs/demo/auth/features/shell/src",
       "prefix": "demo",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/demo/post/post-list/ui/src/**/*.ts",
-              "libs/demo/post/post-list/ui/src/**/*.html"
+              "libs/demo/auth/features/shell/src/**/*.ts",
+              "libs/demo/auth/features/shell/src/**/*.html"
             ]
           }
         }
       }
     },
-    "demo-post-post-detail-feature": {
+    "demo-auth-features-sign-in": {
       "projectType": "library",
-      "root": "libs/demo/post/post-detail/feature",
-      "sourceRoot": "libs/demo/post/post-detail/feature/src",
+      "root": "libs/demo/auth/features/sign-in",
+      "sourceRoot": "libs/demo/auth/features/sign-in/src",
       "prefix": "demo",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/demo/post/post-detail/feature/src/**/*.ts",
-              "libs/demo/post/post-detail/feature/src/**/*.html"
+              "libs/demo/auth/features/sign-in/src/**/*.ts",
+              "libs/demo/auth/features/sign-in/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-auth-features-sign-up": {
+      "projectType": "library",
+      "root": "libs/demo/auth/features/sign-up",
+      "sourceRoot": "libs/demo/auth/features/sign-up/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/auth/features/sign-up/src/**/*.ts",
+              "libs/demo/auth/features/sign-up/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-auth-ui-auth-wrapper": {
+      "projectType": "library",
+      "root": "libs/demo/auth/ui/auth-wrapper",
+      "sourceRoot": "libs/demo/auth/ui/auth-wrapper/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/auth/ui/auth-wrapper/src/**/*.ts",
+              "libs/demo/auth/ui/auth-wrapper/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/demo/auth/ui/auth-wrapper"],
+          "options": {
+            "jestConfig": "libs/demo/auth/ui/auth-wrapper/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-post-features-details": {
+      "projectType": "library",
+      "root": "libs/demo/post/features/details",
+      "sourceRoot": "libs/demo/post/features/details/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/post/features/details/src/**/*.ts",
+              "libs/demo/post/features/details/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-post-features-list": {
+      "projectType": "library",
+      "root": "libs/demo/post/features/list",
+      "sourceRoot": "libs/demo/post/features/list/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/post/features/list/src/**/*.ts",
+              "libs/demo/post/features/list/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-post-ui-list-item": {
+      "projectType": "library",
+      "root": "libs/demo/post/ui/list-item",
+      "sourceRoot": "libs/demo/post/ui/list-item/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/post/ui/list-item/src/**/*.ts",
+              "libs/demo/post/ui/list-item/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/demo/post/ui/list-item"],
+          "options": {
+            "jestConfig": "libs/demo/post/ui/list-item/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-shared-ui-destroyable": {
+      "root": "libs/demo/shared/ui/destroyable",
+      "sourceRoot": "libs/demo/shared/ui/destroyable/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/demo/shared/ui/destroyable/**/*.ts"]
+          }
+        }
+      }
+    },
+    "demo-shared-ui-post-header": {
+      "projectType": "library",
+      "root": "libs/demo/shared/ui/post-header",
+      "sourceRoot": "libs/demo/shared/ui/post-header/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/shared/ui/post-header/src/**/*.ts",
+              "libs/demo/shared/ui/post-header/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-shared-ui-forms-textarea-control": {
+      "projectType": "library",
+      "root": "libs/demo/shared/ui/forms/textarea-control",
+      "sourceRoot": "libs/demo/shared/ui/forms/textarea-control/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/shared/ui/forms/textarea-control/src/**/*.ts",
+              "libs/demo/shared/ui/forms/textarea-control/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "demo-shared-ui-demo-template": {
+      "projectType": "library",
+      "root": "libs/demo/shared/ui/demo-template",
+      "sourceRoot": "libs/demo/shared/ui/demo-template/src",
+      "prefix": "demo",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/demo/shared/ui/demo-template/src/**/*.ts",
+              "libs/demo/shared/ui/demo-template/src/**/*.html"
             ]
           }
         }

@@ -22,17 +22,8 @@
         "libs/shared/utilities/types/src/index.ts"
       ],
       "@panng-stream-demo/shell": ["libs/demo/shell/src/index.ts"],
-      "@panng-stream-demo/auth/feature": [
-        "libs/demo/auth/feature/src/index.ts"
-      ],
       "@panng-stream-demo/auth/data-access": [
         "libs/demo/auth/data-access/src/index.ts"
-      ],
-      "@panng-stream-demo/auth/sign-in/feature": [
-        "libs/demo/auth/sign-in/feature/src/index.ts"
-      ],
-      "@panng-stream-demo/auth/sign-up/feature": [
-        "libs/demo/auth/sign-up/feature/src/index.ts"
       ],
       "@panng-stream-api/data-access": ["libs/api/data-access/src/index.ts"],
       "@panng-stream-api/post": ["libs/api/post/src/index.ts"],
@@ -44,19 +35,44 @@
       "@panng-stream-api/security": ["libs/api/security/src/index.ts"],
       "@panng-stream-api/comment": ["libs/api/comment/src/index.ts"],
       "@panng-stream-demo/auth/util": ["libs/demo/auth/util/src/index.ts"],
-      "@panng-stream-demo/auth/ui": ["libs/demo/auth/ui/src/index.ts"],
-      "@panng-stream-demo/shared/ui": ["libs/demo/shared/ui/src/index.ts"],
-      "@panng-stream-demo/post/post-list/feature": [
-        "libs/demo/post/post-list/feature/src/index.ts"
-      ],
       "@panng-stream-demo/post/data-access": [
         "libs/demo/post/data-access/src/index.ts"
       ],
       "@panng-stream-demo/post/post-list/ui": [
         "libs/demo/post/post-list/ui/src/index.ts"
       ],
-      "@panng-stream-demo/post/post-detail/feature": [
-        "libs/demo/post/post-detail/feature/src/index.ts"
+      "@panng-stream/demo/auth/features/shell": [
+        "libs/demo/auth/features/shell/src/index.ts"
+      ],
+      "@panng-stream/demo/auth/features/sign-in": [
+        "libs/demo/auth/features/sign-in/src/index.ts"
+      ],
+      "@panng-stream/demo/auth/features/sign-up": [
+        "libs/demo/auth/features/sign-up/src/index.ts"
+      ],
+      "@panng-stream/demo/auth/ui/auth-wrapper": [
+        "libs/demo/auth/ui/auth-wrapper/src/index.ts"
+      ],
+      "@panng-stream/demo/post/features/details": [
+        "libs/demo/post/features/details/src/index.ts"
+      ],
+      "@panng-stream/demo/post/features/list": [
+        "libs/demo/post/features/list/src/index.ts"
+      ],
+      "@panng-stream/demo/post/ui/list-item": [
+        "libs/demo/post/ui/list-item/src/index.ts"
+      ],
+      "@panng-stream/demo/shared/ui/destroyable": [
+        "libs/demo/shared/ui/destroyable/src/index.ts"
+      ],
+      "@panng-stream/demo/shared/ui/post-header": [
+        "libs/demo/shared/ui/post-header/src/index.ts"
+      ],
+      "@panng-stream/demo/shared/ui/forms/textarea-control": [
+        "libs/demo/shared/ui/forms/textarea-control/src/index.ts"
+      ],
+      "@panng-stream/demo/shared/ui/demo-template": [
+        "libs/demo/shared/ui/demo-template/src/index.ts"
       ]
     },
     "allowSyntheticDefaultImports": true

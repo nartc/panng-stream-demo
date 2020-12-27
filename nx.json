@@ -42,16 +42,7 @@
     "demo-shell": {
       "tags": ["scope:demo", "type:library"]
     },
-    "demo-auth-feature": {
-      "tags": ["scope:demo", "type:library"]
-    },
     "demo-auth-data-access": {
-      "tags": ["scope:demo", "type:library"]
-    },
-    "demo-auth-sign-in-feature": {
-      "tags": ["scope:demo", "type:library"]
-    },
-    "demo-auth-sign-up-feature": {
       "tags": ["scope:demo", "type:library"]
     },
     "api-data-access": {
@@ -84,23 +75,41 @@
     "demo-auth-util": {
       "tags": []
     },
-    "demo-auth-ui": {
-      "tags": []
-    },
-    "demo-shared-ui": {
-      "tags": []
-    },
-    "demo-post-post-list-feature": {
-      "tags": []
-    },
     "demo-post-data-access": {
       "tags": []
     },
-    "demo-post-post-list-ui": {
+    "demo-auth-features-shell": {
+      "tags": ["scope:demo", "type:library"]
+    },
+    "demo-auth-features-sign-in": {
+      "tags": ["scope:demo", "type:library"]
+    },
+    "demo-auth-features-sign-up": {
+      "tags": ["scope:demo", "type:library"]
+    },
+    "demo-auth-ui-auth-wrapper": {
+      "tags": ["scope:demo", "type:ui"]
+    },
+    "demo-post-features-details": {
       "tags": []
     },
-    "demo-post-post-detail-feature": {
+    "demo-post-features-list": {
       "tags": []
+    },
+    "demo-post-ui-list-item": {
+      "tags": ["scope:demo", "type:ui"]
+    },
+    "demo-shared-ui-destroyable": {
+      "tags": []
+    },
+    "demo-shared-ui-post-header": {
+      "tags": ["scope:demo", "type:ui"]
+    },
+    "demo-shared-ui-forms-textarea-control": {
+      "tags": ["scope:demo", "type:ui"]
+    },
+    "demo-shared-ui-demo-template": {
+      "tags": ["scope:demo", "type:ui"]
     }
   }
 }
